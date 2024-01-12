@@ -6,7 +6,7 @@ int main(){
 
     string first;
     string second;
-    int sum1= 0, sum2 = 0;
+
     cin>>first>>second;
     transform(first.begin(), first.end(), first.begin(), ::toupper);
     transform(second.begin(), second.end(), second.begin(), ::toupper);
