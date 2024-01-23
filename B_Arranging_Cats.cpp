@@ -26,7 +26,7 @@ int main(){
             }
         }
 
-        cout<<max(count1, count1+count2-count1)<<endl;
+        cout<<max(count1, count2)<<endl;
     }
     return 0;
 }
