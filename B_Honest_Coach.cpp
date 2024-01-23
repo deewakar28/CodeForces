@@ -21,16 +21,15 @@ int main(){
 
         sort(v.begin(), v.end());
 
-        int digit = 0;
+        long long int digit, result=INT_MAX;
 
         for(int i=1; i<n; i++){
             diff = v[i] - v[i-1];
             a.push_back(diff);
+            result= min(result, diff);
         }
 
-        sort(a.begin(), a.end());
-
-		cout << a[0] << endl;
+        cout<<result<<endl;
     }
     return 0;
 }
