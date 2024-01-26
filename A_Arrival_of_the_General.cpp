@@ -1,29 +1,34 @@
 #include <iostream>
-#include<vector>
 using namespace std;
 
 int main(){
 
-    long long int n, a, count=0;
-    cin>>n;
+    long long int n, a;
+    cin>>n>>a;
 
-    vector<int> v;
+    int mini=0, maxi=0 ,maxValue=a, minValue=a;
 
-    for(int i =0; i<n; i++){
+    for(int i=1; i<n; i++){
+        
         cin>>a;
-        v.push_back(a);
-    }
 
-    for(int i=0; i<n; i++){
-        for(int j=1; j<n; j++){
-            if(v[i]<v[j]){
-            swap(v[i], v[j]);
-            count++;
-            }
+        if(a>maxValue){
+            maxValue=a;
+            maxi= i;
         }
+        else if(a<=minValue){
+            mini=i;
+            minValue=a;
+        }
+
     }
 
-    cout<<count<<endl;
+    if(maxi>mini){
+        cout<<maxi + (n-1-mini) - 1;
+    }
+    else{
+        cout<<maxi + (n-1-mini);
+    }
 
     return 0;
 }

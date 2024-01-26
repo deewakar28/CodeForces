@@ -5,7 +5,7 @@ using namespace std;
 
 int main(){
 
-    int n, count1=0, count2=0;
+    int n;
     cin>>n;
 
     string s;
