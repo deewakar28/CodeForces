@@ -7,7 +7,7 @@ int main(){
     int t; 
     cin>>t;
     while(t--){
-        int n,a,x, mini=0, maxi=0;
+        int n,a,x, mini=INT_MIN, maxi=INT_MAX;
 
         vector<int> v;
         
@@ -22,17 +22,21 @@ int main(){
             }
         }
 
-        if(maxi<mini){
+        if(maxi>=mini){
+            int ans = maxi - mini-1;
+            for(auto it: v){
+                if(it<=maxi && it>=mini){
+                   ans++;
+                }
+            }
+
+        cout<<ans<<endl;
+            
+        }
+        else{
             cout<<0<<endl;
         }
-
-        int ans = maxi - mini-1;
-        for(auto ele: v){
-            if(ele<=maxi && ele>=mini){
-                ans--;
-            }
-        }
-        cout<<ans<<endl;
+        
     }
     return 0;
 }
