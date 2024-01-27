@@ -8,6 +8,8 @@ int main(){
     cin>>t;
     while(t--){
         int n,a,x, mini=INT_MIN, maxi=INT_MAX;
+        int ans = 0;
+        cin>>n;
 
         vector<int> v;
         
@@ -23,19 +25,18 @@ int main(){
         }
 
         if(maxi>=mini){
-            int ans = maxi - mini-1;
+            
             for(auto it: v){
                 if(it<=maxi && it>=mini){
                    ans++;
                 }
-            }
-
-        cout<<ans<<endl;
-            
+            }       
+            cout<<maxi-mini+1-ans<<endl;
         }
         else{
             cout<<0<<endl;
         }
+
         
     }
     return 0;
