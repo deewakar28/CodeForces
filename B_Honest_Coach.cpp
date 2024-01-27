@@ -12,7 +12,7 @@ int main(){
         long long int n, c, diff;
         cin>>n;
 
-        vector<int> v, a;
+        vector<int> v;
 
         for(int i=0; i<n; i++){
             cin>>c;
@@ -21,11 +21,10 @@ int main(){
 
         sort(v.begin(), v.end());
 
-        long long int digit, result=INT_MAX;
+        long long int result=INT_MAX;
 
         for(int i=1; i<n; i++){
             diff = v[i] - v[i-1];
-            a.push_back(diff);
             result= min(result, diff);
         }
 
