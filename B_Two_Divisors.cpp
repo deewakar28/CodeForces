@@ -14,22 +14,26 @@ ll lcm(ll a, ll b){
     return (a*b)/gcd(a,b);
 }
 
-int main(){
+void solve(){
+
+    ll a, b, ans = 0;
+    cin>>a>>b;
+    ans = lcm(a,b);
+    if(ans!=b){
+        cout<<ans<<endl;
+    }
+    else{
+        cout<<b*(b/a)<<endl;
+    }
+
+}
+
+int32_t main(){
 
     int t;
-    cin >> t;
+    cin>>t;
 
-    while (t--) {
-        int a, b, ans = 0;
-        cin >> a >> b;
-
-        ans = lcm(a,b);
-        if(ans!=b){
-            cout<<ans<<endl;
-        }
-        else{
-            cout<<b*(b/a)<<endl;
-        }
+    while(t--){
+        solve();
     }
-    return 0;
 }
