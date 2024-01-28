@@ -1,30 +1,35 @@
 #include<iostream>
 using namespace std;
 
+#define ll long long int
+
+ll gcd(ll a, ll b){
+    if(b==0){
+        return a;
+    }
+    return gcd(b, a%b);
+}
+
+ll lcm(ll a, ll b){
+    return (a*b)/gcd(a,b);
+}
+
 int main(){
 
     int t;
     cin >> t;
 
     while (t--) {
-        int a, b, ans = 0, temp = 0, c = 0;
+        int a, b, ans = 0;
         cin >> a >> b;
-        bool found = false; 
 
-        for (int i = 1; i <= 10; i++) {
-            c = a * i;
-            for (int j = 1; j <= 10; j++) {
-                temp = b * j;
-                if (temp == c) {
-                    ans = temp;
-                    found = true;
-                    break;
-                }
-            }
-            if (found) break;
+        ans = lcm(a,b);
+        if(ans!=b){
+            cout<<ans<<endl;
         }
-
-        cout<<ans<<endl;
+        else{
+            cout<<b*(b/a)<<endl;
+        }
     }
     return 0;
 }
