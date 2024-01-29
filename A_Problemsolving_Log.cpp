@@ -17,7 +17,7 @@ void solve(){
         v[s[i]-'A']++;
     }
 
-    for(int i=0; i<s.size(); i++){
+    for(int i=0; i<v.size(); i++){
         if(v[i]>=i+1){
             count++;
         }
