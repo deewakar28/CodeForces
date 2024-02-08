@@ -21,7 +21,8 @@ void solve(){
         a += s[i-1];
         a += s[i];
 
-        if(mp.find(a) != mp.end() && mp[a] < i-1){
+        if(mp.find(a) != mp.end() && mp[a]!=i-1){
+
             flag = true;
             break;
         }
