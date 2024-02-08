@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+#define ll long long int
+
 void solve(){
     ll n, flag1, flag2;
     cin>>n;
